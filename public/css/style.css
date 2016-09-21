@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* -- Sticky footer styles -- */
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-a {
-  color: #00B7FF;
+body { margin-bottom: 60px; } /* Margin bottom by footer height */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 20px 20px;
+  background-color: #222;
+  color: #FFF;
+  font-size: 12px;
+}
+
+ /* -- Bootstrap overwritten styles -- */
+.navbar-inverse .navbar-toggle { color: #FFF; }
+.navbar-inverse .navbar-brand { color: #FFF; }
+.navbar-inverse .navbar-nav>li>a { color: #FFF; }
+.navbar { border-radius: 0px; margin-bottom: 1px; }
+.form-control { display: inline; }
+
+/* -- Helper styles -- */
+.hidden {
+	display: none;
 }

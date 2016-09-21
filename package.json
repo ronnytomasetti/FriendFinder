@@ -4,7 +4,7 @@
   "description": "A compatibility-based friend finder app. This dating app site will take in results from user survey and compare answers with those of other users to find the best overall match.",
   "private": true,
   "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "jade": "~1.11.0",
+    "mongodb": "^2.2.10",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
   }
