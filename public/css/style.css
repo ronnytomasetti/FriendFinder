@@ -25,6 +25,10 @@ footer {
 .navbar { border-radius: 0px; margin-bottom: 1px; }
 .form-control { display: inline; }
 
+.btn-group>.btn:first-child,
+.btn-group>.btn:not(.dropdown-toggle),
+.btn-group>.btn:last-child { outline: none; }
+
 /* -- Helper styles -- */
 .hidden {
 	display: none;
