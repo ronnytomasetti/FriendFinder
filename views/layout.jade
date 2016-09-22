@@ -12,22 +12,34 @@ html(lang='en-US')
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
 		link(rel='stylesheet', href='/css/style.css')
 	body
-		nav.navbar.navbar-inverse
+		nav.navbar.navbar-fixed-top
 			.container
 				.navbar-header
 					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
 						span.sr-only Toggle navigation
 						span.glyphicon.glyphicon-menu-hamburger(aria-hidden='true')
-					a.navbar-brand(href='/') FF
+					a.navbar-brand(href='/')
+						span.glyphicon.glyphicon-fire(aria-hidden='true')
 				#navbar.collapse.navbar-collapse
 					ul.nav.navbar-nav.navbar-right
 						li
-							a(href='/api') API Friends
+							a(href='/api') API
 						li
-							a(href='https://github.com/ronnytomasetti/FriendFinder', target='_blank') GitHub Repo
+							a(href='https://github.com/ronnytomasetti/FriendFinder', target='_blank') GitHub
+
 		block content
+		
 		footer
-			.container.text-center
-				p Developed with <span class="glyphicon glyphicon-heart"></span> by Ronny Tomasetti for UCF Coding Bootcamp 2016
+			.container
+				.col-xs-4.col-sm-4.col-md-4.col-lg-4
+					p.text-muted.text-left UCF Coding Bootcamp 062116
+				.col-xs-4.col-sm-4.col-md-4.col-lg-4
+					p.text-muted.text-center
+						| Made with 
+						span.glyphicon.glyphicon-heart(aria-hidden='true', style='color:red;')
+						|  by Ronny Tomasetti
+				.col-xs-4.col-sm-4.col-md-4.col-lg-4
+					p.text-muted.text-right Copyright &copy 2016. All rights reserved.
+
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
