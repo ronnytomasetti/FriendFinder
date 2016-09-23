@@ -1,6 +1,6 @@
-@import 'https://fonts.googleapis.com/css?family=Ubuntu:400,500';
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 
-* { font-family: 'Ubuntu', sans-serif; }
+* { font-family: 'Source Sans Pro', sans-serif; }
 
 html {
     position: relative;
@@ -24,10 +24,8 @@ footer {
     font-size: 12px;
 }
 
-.table>tbody>tr>td {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	vertical-align: middle;
+#survey-error {
+	margin-bottom: 20px;
 }
 
  /* -- Bootstrap overwritten styles -- */
@@ -55,18 +53,27 @@ footer {
 .navbar-brand, .navbar-brand:hover {
     color: #164E5B;
     text-decoration: none;
-    font-weight: 500;
 }
 
-.form-control { display: inline; }
+.table>thead>tr>th {
+	padding: 20px 10px;
+	vertical-align: middle;
+	font-size: 20px;
+}
 
-.btn-group>.btn:first-child,
-.btn-group>.btn:not(.dropdown-toggle),
-.btn-group>.btn:last-child { outline: none; }
+.table>tbody>tr>td {
+	padding: 15px 20px;
+	vertical-align: middle;
+	font-size: 18px;
+}
 
 .btn-default.active, .btn-default:active {
     background-color: #D1D1D1;
 }
+
+.btn-group>.btn:first-child,
+.btn-group>.btn:not(.dropdown-toggle),
+.btn-group>.btn:last-child { outline: none; }
 
 /* -- Helper styles -- */
 .hidden {
