@@ -4,12 +4,10 @@ block content
 	.container-fluid
 		.row.text-center
 			br
-			h1 SURVEY RESULTS
-			h2= 'USER NAME ' + user.name
-			h2= 'USER PHOTO ' + user.photo
-			h2= 'USER UUID ' + user.uuid
-			hr
-			h2= 'FRIEND NAME ' + friend.name
-			h2= 'FRIEND PHOTO ' + friend.photo
-			h2= 'FRIEND UUID ' + friend.uuid
-			br
+			h1 BFFs Forever :)
+			.col-xs-6
+				h2.text-center= user.name
+				img.thumbnail.img-responsive.center-block(src=user.photo, alt=user.name)
+			.col-xs-6
+				h2.text-center= friend.name
+				img.thumbnail.img-responsive.center-block(src=friend.photo, alt=friend.name)
