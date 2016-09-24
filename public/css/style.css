@@ -28,16 +28,23 @@ footer {
 	margin-bottom: 20px;
 }
 
+form {
+	margin-top: 40px;
+}
+
 .form-group {
 	margin: 10px 3px;
 }
 
-#user-name {
-	width: 200px;
+.error-msg {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	color: red;
 }
 
-#img-url {
-	min-width: 300px;
+.survey-header {
+	margin-top: 25px;
+	margin-bottom: 10px;
 }
 
  /* -- Bootstrap overwritten styles -- */

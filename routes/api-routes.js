@@ -1,15 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-var SurveysDB = require('../data/SurveysDB.js');
+var FriendsDB = require('../data/FriendsDB.js');
+var Friend = require('../data/Friend.js');
 
-router.get('/surveys', function(req, res) {
-	res.json(SurveysDB);
+router.get('/friends', function(req, res) {
+	res.json(FriendsDB);
 });
 
-router.post('/surveys', function(req, res) {
-	SurveysDB.push(req.body);
-	res.json(true);
+router.post('/friends', function(req, res) {
+	var name = req.body.name;
+	var photo = req.body.photo;
+	var scores = req.body['scores[]'];
+	var uuid = Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+
+	var newFriend = new Friend(name, photo, scores, uuid);
+
+	FriendsDB.push(newFriend);
+	res.status(200).json(newFriend);
 });
 
 module.exports = router;

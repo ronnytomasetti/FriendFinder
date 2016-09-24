@@ -10,19 +10,41 @@ function initSurveyResponsesObject() {
 }
 
 function submitSurvey() {
-	console.log('SUBMIT SURVEY', JSON.stringify(surveyResponses, null, 4));
+	var userName = $('.survey-header').attr('data-user');
+	var userimgURL = $('.survey-header').attr('data-img');
+	var userScores = [];
 
-	var name = 'TESTING FUNCTIONS';
-	var imgURL = 'IMAGE URL';
+	$.each(surveyResponses, function(key, val) {
+		userScores.push(parseInt(val));
+	});
+
+	var newSurvey = {
+		name: userName,
+		photo: userimgURL,
+		scores: userScores
+	};
 
 	var currentURL = window.location.origin;
 
-	$.post(currentURL + '/api/surveys', surveyResponses, function(data) {
-		if (data)
-			window.location.assign('/survey-results/' + name);
-		else
-			console.log("ERROR");
+	$.ajax({
+		url: currentURL + '/api/friends',
+		data: newSurvey,
+		error: function() {
+			console.log('AJAX ERROR');
+		},
+		dataType: 'json',
+		success: function(data) {
+		  window.location.assign('/survey-results/' + data.uuid);
+		},
+		type: 'POST'
 	});
+
+	// $.post(currentURL + '/api/friends', newSurvey, function(data) {
+	// 	if (data)
+	// 		window.location.assign('/survey-results/' + data.uuid);
+	// 	else
+	// 		console.log("ERROR");
+	// });
 }
 
 $(document).ready(function() {
@@ -33,7 +55,9 @@ $(document).ready(function() {
 		var resGroupId = $(this).attr('id');
 		var resValue = $(event.target).text();
 
-		surveyResponses[ resGroupId ] = resValue;
+		surveyResponses[ resGroupId ] = parseInt(resValue);
+
+		// $(this).parent().removeClass('bg-danger');
 	});
 
 	$('#submit-btn').click(function(event) {

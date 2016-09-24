@@ -4,6 +4,12 @@ block content
 	.container-fluid
 		.row.text-center
 			br
-			h1 SURVEY RESULTS PAGE
-			h2= name
+			h1 SURVEY RESULTS
+			h2= 'USER NAME ' + user.name
+			h2= 'USER PHOTO ' + user.photo
+			h2= 'USER UUID ' + user.uuid
+			hr
+			h2= 'FRIEND NAME ' + friend.name
+			h2= 'FRIEND PHOTO ' + friend.photo
+			h2= 'FRIEND UUID ' + friend.uuid
 			br

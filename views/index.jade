@@ -1,13 +1,14 @@
 extends layouts/layout
 
 block content
-	.container-fluid
+	.container
 		.row.text-center
 			br
 			h1= title
 			h3 You're only a few questions away from finding your BFF!
-			br
 			form.form-inline
+				hr
+				p To get started, please provide your name and profile image url below:
 				.form-group
 					label.sr-only(for='user-name') Name
 					input#user-name.form-control(type='text', placeholder='Name')
@@ -15,7 +16,11 @@ block content
 					label.sr-only(for='img-url') Profile Image URL
 					input#img-url.form-control(type='url', placeholder='Image URL')
 				.form-group
-					a(href='/survey')
-						button.btn.btn-danger.btn-md(type='button')
-							span.glyphicon.glyphicon-th-list
-							|   TAKE SURVEY
+						button.btn.btn-danger.btn-md(type='button', id='btn-take-survey')
+							|   TAKE SURVEY 
+							span.glyphicon.glyphicon-chevron-right
+				p.error-msg.hidden * NAME AND URL ARE REQUIRED
+				hr
+							
+	append scripts
+		script(src='/js/script.js')
