@@ -19,7 +19,7 @@ router.get('/survey-results/:uuid', function(req, res) {
 	var currentUser = {};
 	var friendsArray = [];
 	var bestFriend = {};
-	var lowestScore = 100;
+	var lowestScore;
 
 	for (var index in FriendsDB) {
 		if (FriendsDB[index].uuid === reqUUID)
@@ -28,9 +28,6 @@ router.get('/survey-results/:uuid', function(req, res) {
 			friendsArray.push(FriendsDB[index]);
 	}
 
-	console.log('CURRENT USER: ', JSON.stringify(currentUser, null, 2));
-	console.log('FRIENDS ARRAY: ', JSON.stringify(friendsArray, null, 2));
-
 	for (var i in friendsArray) {
 		var totalDifference = 0;
 
@@ -38,10 +35,7 @@ router.get('/survey-results/:uuid', function(req, res) {
 			totalDifference += Math.abs(parseInt(currentUser.scores[f]) - parseInt(friendsArray[i].scores[f]));
 		}
 
-		console.log('TOTAL DIFFERENCE: ', totalDifference);
-		console.log('LOWEST SCORE: ', totalDifference);
-
-		if (totalDifference < lowestScore) {
+		if (totalDifference < lowestScore || lowestScore === undefined) {
 			lowestScore = totalDifference;
 			bestFriend = friendsArray[i];
 		}
