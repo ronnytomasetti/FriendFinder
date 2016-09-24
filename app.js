@@ -34,7 +34,7 @@ app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routesHTML);
-app.use('/', routesAPI);
+app.use('/api', routesAPI);
 
 // Catch 404 errors, forward to error handlers below.
 app.use(function(req, res, next) {

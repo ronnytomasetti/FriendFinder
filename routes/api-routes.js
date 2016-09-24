@@ -3,11 +3,11 @@ var router = express.Router();
 
 var SurveysDB = require('../data/SurveysDB.js');
 
-router.get('/api/surveys', function(req, res) {
+router.get('/surveys', function(req, res) {
 	res.json(SurveysDB);
 });
 
-router.post('/api/surveys', function(req, res) {
+router.post('/surveys', function(req, res) {
 	SurveysDB.push(req.body);
 	res.json(true);
 });

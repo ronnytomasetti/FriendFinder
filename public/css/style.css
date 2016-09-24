@@ -28,6 +28,18 @@ footer {
 	margin-bottom: 20px;
 }
 
+.form-group {
+	margin: 10px 3px;
+}
+
+#user-name {
+	width: 200px;
+}
+
+#img-url {
+	min-width: 300px;
+}
+
  /* -- Bootstrap overwritten styles -- */
 .navbar .navbar-toggle { color: #CA4047; }
 .navbar .navbar-brand { color: #CA4047; }
