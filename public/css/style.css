@@ -47,6 +47,10 @@ form {
 	margin-bottom: 10px;
 }
 
+.profile-img {
+	max-height: 300px;
+}
+
  /* -- Bootstrap overwritten styles -- */
 .navbar .navbar-toggle { color: #CA4047; }
 .navbar .navbar-brand { color: #CA4047; }
