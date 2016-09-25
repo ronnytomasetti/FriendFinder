@@ -1,3 +1,10 @@
+/**
+ * UCF Coding Bootcamp 2016
+ * Ronny Tomasetti
+ *
+ * QuestionsDB - Array of questions used on survey page.
+ */
+
 var questions =
 [
 	"Your mind is on a constant struggle to resist being seduced by the Dark Side.",

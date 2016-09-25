@@ -1,19 +1,38 @@
 var express = require('express');
 var router = express.Router();
 
+// =================================================================
+// Pull in QuestionsDB and FriendDB js files with require
+// =================================================================
 var Questions = require('../data/QuestionsDB.js');
 var FriendsDB = require('../data/FriendsDB.js');
 
+// =================================================================
+// GET API route serving home page
+// =================================================================
 router.get('/', function(req, res) {
   res.render('index', { title : 'Friend Finder' });
 });
 
+// =================================================================
+// GET API route serving survey template with questions array.
+// Route requires user json object as parameter.
+// =================================================================
 router.get('/take-survey/:user', function(req, res) {
+
+	//TODO: VALIDATE USER IS TYPE JSON WITH USER AND IMG URL
+
 	res.render('survey', { questions : Questions,
 								user : JSON.parse(decodeURIComponent(req.params.user)) });
 });
 
+// =================================================================
+// GET API route serving survey results page
+// Beat match logic happens here. Route requires uuid in order
+// to find best match for that user.
+// =================================================================
 router.get('/survey-results/:uuid', function(req, res) {
+	
 	var reqUUID = req.params.uuid;
 
 	var currentUser = {};

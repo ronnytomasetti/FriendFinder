@@ -1,3 +1,10 @@
+/**
+ * UCF Coding Bootcamp 2016
+ * Ronny Tomasetti
+ * 
+ * FriendsDB - Friends list array
+ */
+
 var db = [
 	{
 		name   : 'Darth Vader',
