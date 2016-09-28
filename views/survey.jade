@@ -4,6 +4,8 @@ block content
 	.container-fluid
 		.row.text-center.survey-header(data-user=user.name, data-img=user.img)
 			h1 SURVEY
+			p Please provide an answer for all of the questions below based on how strongly you agree or disagree with the statement.
+			p Responses are based on a scale (1-5) corresponding to 1 = strongly disagree,  3 = agree,  5 = strongly agree.
 	.container
 		.row
 			.panel.panel-default
@@ -12,7 +14,7 @@ block content
 						thead
 							tr
 								th Questions
-								th Answers
+								th Response
 						- var totalQuestions = questions.length;
 						tbody(id='survey', total-questions= totalQuestions)
 							- for (var i in questions) {
