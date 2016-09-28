@@ -1,15 +1,8 @@
 // =================================================================
-// Dependency declarations
+// Dependencies
 // =================================================================
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-var routesHTML = require('./routes/html-routes');
-var routesAPI = require('./routes/api-routes');
 
 // =================================================================
 // Initialize new Express app
@@ -25,14 +18,19 @@ app.set('view engine', 'jade');
 // =================================================================
 // Configure app
 // =================================================================
+var logger = require('morgan');
 app.use(logger('dev'));
+
+var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 
+var favicon = require('serve-favicon');
 app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+var routesHTML = require('./routes/html-routes');
+var routesAPI = require('./routes/api-routes');
 app.use('/', routesHTML);
 app.use('/api', routesAPI);
 
